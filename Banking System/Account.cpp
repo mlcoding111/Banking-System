@@ -9,14 +9,24 @@ void Account::DisplayStats() {
 	std::cout << "___________________________" << std::endl;
 }
 
-void Account::newAccountMessage(int given_args) {
-	std::cout << "New account created with : " << given_args << " arguments given." << std::endl;
-	std::cout << "Details about the new account below : " << std::endl;
+void Account::Init(int args_given) {
+	std::cout << "Account '" << name << "' created with : " << args_given << " arguments." << std::endl;
 	this->DisplayStats();
 }
 
-Account::Account() : balance{ 100 }, name{ "Default" } {
-	this->newAccountMessage(0);
+Account::Account(double bal_val, std::string name_val )
+	: balance{ bal_val }, name{ name_val }{
+	this->Init(2);
+}
+
+Account::Account(std::string name_val)
+	: Account{ 0, name_val } {
+	this->Init(1);
+}
+
+Account::Account()
+	: Account{ 0, "Default, mic" } {
+	this->Init(0);
 };
 
 Account::~Account() {

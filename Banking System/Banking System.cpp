@@ -5,6 +5,5 @@
 
 int main()
 {
-    Account mic;
-    std::cout << "Hello World!\n";
+	Account mic{ 1000.0, "Michael" };
 }

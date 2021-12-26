@@ -10,10 +10,12 @@ private:
 public:
 	// Constructor
 	Account();
+	Account(std::string name_val);
+	Account(double bal_val, std::string name_val);
 
 	// Functions
 	void DisplayStats();
-	void newAccountMessage(int given_args);
+	void Init(int args_given);
 
 	// Deconstructor
 	~Account();
