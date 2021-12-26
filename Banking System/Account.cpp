@@ -14,6 +14,8 @@ void Account::Init(int args_given) {
 	this->DisplayStats();
 }
 
+
+// Constructors
 Account::Account(double bal_val, std::string name_val )
 	: balance{ bal_val }, name{ name_val }{
 	this->Init(2);
@@ -29,6 +31,23 @@ Account::Account()
 	this->Init(0);
 };
 
+
+void Account::Deposit(double deposit_amount) {
+	this->balance += deposit_amount;
+	std::cout << std::endl;
+	std::cout << deposit_amount << "$ added successfully." << std::endl;
+	std::cout << "You current balance is now : " << balance << "$" << std::endl;
+}
+
+void Account::Withdraw(double withdraw_amount) {
+	if (withdraw_amount <= balance)
+		this->balance -= withdraw_amount;
+	std::cout << std::endl;
+	std::cout << withdraw_amount << "$ withdrawn successfully." << std::endl;
+	std::cout << "You current balance is now : " << balance << "$" << std::endl;
+}
+
 Account::~Account() {
+	std::cout << std::endl << std::endl;
 	std::cout << "Destructor called for : " << name << std::endl;
 }
