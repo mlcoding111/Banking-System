@@ -13,7 +13,6 @@ public:
 
 	// Functions
 	void DisplayStats();
-	void Init(int args_given);
 
 	void Deposit(double deposit_amount);
 	void Withdraw(double withdraw_amount);
