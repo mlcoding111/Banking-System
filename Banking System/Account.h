@@ -9,9 +9,7 @@ private:
 	
 public:
 	// Constructor
-	Account();
-	Account(std::string name_val);
-	Account(double bal_val, std::string name_val);
+	Account(double bal_val = 1000.0, std::string name_val = "Default name");
 
 	// Functions
 	void DisplayStats();
