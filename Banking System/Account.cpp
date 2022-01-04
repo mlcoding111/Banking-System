@@ -15,6 +15,13 @@ Account::Account(double bal_val, std::string name_val )
 	this->DisplayStats();
 }
 
+// Copy Constructor
+Account::Account(const Account &source): balance{ source.balance }, name{ source.name }{
+	std::cout << "Copy Constructor for : " << source.name << std::endl;
+	this->DisplayStats(); 
+
+}
+
 void Account::Deposit(double deposit_amount) {
 	this->balance += deposit_amount;
 	std::cout << std::endl;
